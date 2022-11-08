@@ -1,21 +1,13 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #d80870;
+  min-height: 55px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +16,102 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+label{
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+input{
+  border: 2px solid #40b1f7;
+  border-radius: 5px;
+  padding: 2px 8px;
+  outline: none;
+  text-align: center;
+  width: 250px;
+  transition: all ease-in-out 0.5s;
+  background-color: #fff;
+}
+input[type=text]:hover{
+  border: 2px solid #00b0a7;
+}
+input[type=text]:focus{
+  border: 2px solid #ff0080;
+  transform: scale(1.03);
+}
+
+button{
+  background: #fff9fc;
+  color: #d80870;
+  font-size: 18px !important;
+  font-weight: bold;
+  border: 2px solid #ff0080;
+  border-radius: 30px !important;
+  border-collapse: separate; 
+  padding: 4px 15px;
+  transition: all ease-in-out 0.3s;
+}
+button:hover{
+  background-color: #ff0080;
+  color: #fff;
+  font-size: 21px;
+}
+
+.letters{
+  width: 40px;
+  height: 40px;
+  margin: 0 7px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 57, 57);
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease-in-out 1s;
+}
+.cross1{
+  border: calc(1.5px) solid rgb(243, 0, 0);
+  width: 40px;
+  position: absolute;
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: all ease-in-out 0.8s;
+}
+.cross2{
+  border: calc(1.5px) solid red;
+  width: 40px;
+  position: absolute;
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: all ease-in-out 0.8s;
+}
+.bg-mute{
+  background-color: #a09d9d;
+  transform: scale(0.9);
+  transition: all ease-in-out 0.8s;
+}
+
+.result{
+  margin: 30px 15px;
+  text-align: center;
+}
+
+.result>b{
+  margin: 0 6px 0 3px;
+  font-style: italic;
+  color: #444;
+}
+.result>span{
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  color: #ff0080;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 320px) {
+  .letters{
+    width: 30px;
+    height: 30px;
   }
 }
