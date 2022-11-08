@@ -27,7 +27,7 @@ function App() {
     if (!name1.current.value || !name2.current.value) return toast.error('Enter two names');
 
     const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~0123456789]/;
-    if (specialChars.test(name1.current.value + name2.current.value)) return toast.error('dont ')
+    if (specialChars.test(name1.current.value + name2.current.value)) return toast.error('Enter valid names')
     
     const [removeable, res] = flamer(name1.current.value, name2.current.value);
 
@@ -69,11 +69,11 @@ function App() {
       </header>
       <div className='d-flex justify-content-center align-items-center flex-wrap mt-4'>
         <div className='m-3'>
-          <label className='me-2'>Person 1 </label>
+          <label className='me-2'>Name 1 </label>
           <input type='text' ref={name1}/>
         </div>
         <div className='m-3'>
-          <label className='me-2'>Person 2 </label>
+          <label className='me-2'>Name 2 </label>
           <input type='text' ref={name2} />
         </div>
       </div>
@@ -110,6 +110,12 @@ function App() {
           </div>
         </Bounce>
       </div>
+
+      <footer className="footer" >
+          <p className='fs-7'>
+              ©2022 by Thamizhanban
+          </p>
+      </footer>
 
       <MyToaster/>
     </div>

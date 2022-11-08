@@ -109,6 +109,18 @@ button:hover{
   margin-left: 10px;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 25px;
+  width: 98%;
+  text-align: right;
+}
+
+.fs-7{
+  font-size: 14px;
+}
+
 @media only screen and (max-width: 320px) {
   .letters{
     width: 30px;
