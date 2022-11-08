@@ -29,6 +29,8 @@ function App() {
 
     const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~0123456789]/;
     if (specialChars.test(name1.current.value + name2.current.value)) return toast.error('Enter valid names')
+
+    if (name1.current.value === name2.current.value) return toast.error('Enter different names');
     
     const [removeable, res] = flamer(name1.current.value, name2.current.value);
 
@@ -51,7 +53,7 @@ function App() {
       name2 : name2.current.value,
       relationship : result.value
     }
-    const data = await axios.post('https://636a750dc07d8f936d9e8a7b.mockapi.io/flames', postData);
+    const {data} = await axios.post('https://636a750dc07d8f936d9e8a7b.mockapi.io/flames', postData);
 
     name1.current.disabled = true;
     name2.current.disabled = true;
