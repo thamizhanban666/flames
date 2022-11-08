@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import flamer from './helper/controller';
 import MyToaster from './helper/MyToaster';
 import { Flip, Bounce, Zoom, Hinge, JackInTheBox, Slide, Roll } from "react-awesome-reveal";
+import axios from 'axios'
 
 function App() {
   
@@ -22,7 +23,7 @@ function App() {
   const [showResult, setShowResult] = useState(false)
   const [result, setResult] = useState({});
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (showResult) return;
     if (!name1.current.value || !name2.current.value) return toast.error('Enter two names');
 
@@ -45,12 +46,12 @@ function App() {
       if (obj.label === res) return setResult(state => obj);
     })
 
-    const data = {
+    const postData = {
       name1 : name1.current.value,
       name2 : name2.current.value,
       relationship : result.value
     }
-    axios.post('https://636a750dc07d8f936d9e8a7b.mockapi.io', JSON.stringify(data));
+    const data = await axios.post('https://636a750dc07d8f936d9e8a7b.mockapi.io/flames', postData);
 
     name1.current.disabled = true;
     name2.current.disabled = true;
