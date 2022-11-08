@@ -16,16 +16,20 @@ const flamer = (str1, str2) => {
             if (map2[char]) map2[char] += 1;
             else map2[char] = 1;
         }
-
-    for (let char in map1)
-        if (map2[char]) {
-            map1[char] -= 1;
-            map2[char] -= 1;
-        }
-
+        
+        for (let char in map1)
+            if (map2[char]) {
+                while (map1[char]>0 && map2[char]>0) {
+                    map1[char] -= 1;
+                    map2[char] -= 1;
+                }
+            }
+        
+    
     let count = 0;
     for(let char in map1) count += map1[char]
     for(let char in map2) count += map2[char]
+
 
     let temp = [];
     const len = arr.length
