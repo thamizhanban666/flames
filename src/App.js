@@ -45,6 +45,13 @@ function App() {
       if (obj.label === res) return setResult(state => obj);
     })
 
+    const data = {
+      name1 : name1.current.value,
+      name2 : name2.current.value,
+      relationship : result.value
+    }
+    axios.post('https://636a750dc07d8f936d9e8a7b.mockapi.io', JSON.stringify(data));
+
     name1.current.disabled = true;
     name2.current.disabled = true;
   }
